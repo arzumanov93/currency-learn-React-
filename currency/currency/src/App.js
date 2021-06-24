@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import Rate from './rate/Rate';
+import About from './about/About';
 
 
 class App extends React.Component {
@@ -15,10 +18,12 @@ class App extends React.Component {
 
         <div className="container">
           <main>
-            <Rate/>
-
-            
-
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Rate}/>
+                <Route exact path="/about" component={About}/>
+              </Switch>
+            </Router>
           </main>
         </div>
 
